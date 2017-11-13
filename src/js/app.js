@@ -21,7 +21,17 @@
     const id = answer.query.pageids[0];
     const title = answer.query.pages[id].title;
     const extract = answer.query.pages[id].extract;
-    console.log(extract);
+    const urlToArticle = answer.query.pages[id].fullurl;
+    const heading = createElement('h2', title);
+    const paragraphForExtract = createElement('p', extract, undefined);
+    const buttonToFullArticle = createElement('button');
+    const linkToArticle = createElement('a', 'See full');
+    linkToArticle.setAttribute('href', urlToArticle);
+
+    buttonToFullArticle.appendChild(linkToArticle);
+    searchResultContainer.appendChild(heading);
+    searchResultContainer.appendChild(paragraphForExtract);
+    searchResultContainer.appendChild(buttonToFullArticle);
   }
 
   function checkForSuccess(answer) {
@@ -37,7 +47,7 @@
   }
   function requestArticle(input) {
     const searchQuery = input.toLowerCase();
-    const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&uselang=de&prop=extracts%7Cinfo&indexpageids=1&titles=${searchQuery}&exintro=1&explaintext=1&inprop=url&origin=*`;
+    const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&uselang=de&prop=extracts%7Cinfo&indexpageids=1&titles=${searchQuery}&redirects=1&exintro=1&explaintext=1&inprop=url&origin=*`;
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.onload = function request() {
