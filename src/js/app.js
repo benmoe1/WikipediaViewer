@@ -3,7 +3,32 @@
   const inputField = document.getElementById('js_userInput');
   const submitButton = document.getElementById('js_userSubmit');
   const validationContainer = document.getElementById('js_validationMessage');
+  const searchResultContainer = document.getElementById('js_showResult');
 
+  function checkForSuccess(answer) {
+    switch (answer.query.pageids[0]) {
+      case '-1': {
+        searchResultContainer.innerHTML = 'Your search was not successfull. Please try another query';
+        break;
+      }
+      default: {
+        answerIntoDOM(answer);
+      }
+    }
+  }
+  function requestArticle(input) {
+    const searchQuery = input.toLowerCase();
+    const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&uselang=de&prop=extracts%7Cinfo&indexpageids=1&titles=${searchQuery}&exintro=1&explaintext=1&inprop=url&origin=*`;
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onload = function request() {
+      if (this.readyState === 4 && this.status === 200) {
+        const requestAnswer = JSON.parse(this.responseText);
+        checkForSuccess(requestAnswer);
+      }
+    };
+    xhr.send();
+  }
   function validateUserInput() {
     const input = inputField.value;
     switch (input) {
@@ -11,9 +36,10 @@
         inputField.setCustomValidity('Your search can\'t be empty');
         validationContainer.textContent = inputField.validationMessage;
         break;
+
       default:
         inputField.value = '';
-        console.log('would be searching now');
+        requestArticle(input);
     }
   }
   function clearValidationMessage() {
