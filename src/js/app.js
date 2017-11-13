@@ -5,6 +5,25 @@
   const validationContainer = document.getElementById('js_validationMessage');
   const searchResultContainer = document.getElementById('js_showResult');
 
+  function createElement(elementName, textContent, className) {
+    const element = document.createElement(elementName);
+    if (textContent !== undefined) {
+      const text = document.createTextNode(textContent);
+      element.appendChild(text);
+    }
+    if (className !== undefined) {
+      element.classList.add(className);
+    }
+    return element;
+  }
+
+  function answerIntoDOM(answer) {
+    const id = answer.query.pageids[0];
+    const title = answer.query.pages[id].title;
+    const extract = answer.query.pages[id].extract;
+    console.log(extract);
+  }
+
   function checkForSuccess(answer) {
     switch (answer.query.pageids[0]) {
       case '-1': {
