@@ -20,6 +20,8 @@ $success: #00e676;
  border-width: 0;
  box-shadow: 0 3px 6px rgba(0,0,0,0.16);
  cursor: pointer;
+ height: 35px;
+ width: 80px;
  &:active{
    opacity: .8;
    box-shadow: none
@@ -79,13 +81,16 @@ a {
 input {
   margin-top: 20px;
   width: 60%;
-  border: none;
-  border-bottom: 1px solid;
-  width: 55%;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 8px;
   &:focus{
     outline: none;
-    border-bottom: 1px solid $accent;
+    border: 1px solid $accent;
     transition: all 0.2s cubic-bezier(.25,.1,.25,1);
+}
+&:invalid{
+  box-shadow: none;
 }
 }
 .secondary {
@@ -105,10 +110,16 @@ button {
   color: $icon-text;
   margin-left: 10px;
 }
+.button {
+  @include button;
+  text-align: center;
+}
 .success {
 background: $success;
 border: 1px solid  $success;
 a {
-color: $icon-text
+color: $icon-text;
+margin: 0 auto;
+text-align: bottom;
 }
 }

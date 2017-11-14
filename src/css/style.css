@@ -444,13 +444,15 @@ a {
 input {
   margin-top: 20px;
   width: 60%;
-  border: none;
-  border-bottom: 1px solid;
-  width: 55%; }
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 8px; }
   input:focus {
     outline: none;
-    border-bottom: 1px solid #03A9F4;
+    border: 1px solid #03A9F4;
     transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1); }
+  input:invalid {
+    box-shadow: none; }
 
 .secondary {
   color: #757575;
@@ -465,7 +467,9 @@ button {
   outline: none;
   border-width: 0;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-  cursor: pointer; }
+  cursor: pointer;
+  height: 35px;
+  width: 80px; }
   button:active {
     opacity: .8;
     box-shadow: none; }
@@ -475,10 +479,24 @@ button {
   color: #FFFFFF;
   margin-left: 10px; }
 
+.button {
+  outline: none;
+  border-width: 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+  height: 35px;
+  width: 80px;
+  text-align: center; }
+  .button:active {
+    opacity: .8;
+    box-shadow: none; }
+
 .success {
   background: #00e676;
   border: 1px solid #00e676; }
   .success a {
-    color: #FFFFFF; }
+    color: #FFFFFF;
+    margin: 0 auto;
+    text-align: bottom; }
 
 /*# sourceMappingURL=style.css.map */
