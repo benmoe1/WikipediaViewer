@@ -27,10 +27,10 @@
     const urlToArticle = answer.query.pages[id].fullurl;
     const heading = createElement('h2', title);
     const paragraphForExtract = createElement('p', extract, undefined);
-    const buttonToFullArticle = createElement('button');
+    const buttonToFullArticle = createElement('div');
     const linkToArticle = createElement('a', 'See full');
     linkToArticle.setAttribute('href', urlToArticle);
-    buttonToFullArticle.classList.add('success');
+    buttonToFullArticle.classList.add('button', 'success');
 
     buttonToFullArticle.appendChild(linkToArticle);
     searchResultContainer.appendChild(heading);
