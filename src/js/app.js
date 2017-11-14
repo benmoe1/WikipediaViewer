@@ -30,6 +30,7 @@
     const buttonToFullArticle = createElement('button');
     const linkToArticle = createElement('a', 'See full');
     linkToArticle.setAttribute('href', urlToArticle);
+    buttonToFullArticle.classList.add('success');
 
     buttonToFullArticle.appendChild(linkToArticle);
     searchResultContainer.appendChild(heading);
