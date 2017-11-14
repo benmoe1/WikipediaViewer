@@ -66,7 +66,7 @@
     const input = inputField.value;
     switch (input) {
       case '':
-        inputField.setCustomValidity('Your search can\'t be empty');
+        inputField.setCustomValidity('Your search can\'t be empty \u{1f633}');
         validationContainer.textContent = inputField.validationMessage;
         break;
 
