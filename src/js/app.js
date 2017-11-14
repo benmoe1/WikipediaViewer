@@ -16,8 +16,11 @@
     }
     return element;
   }
-
+  function clearDOM() {
+    searchResultContainer.innerHTML = '';
+  }
   function answerIntoDOM(answer) {
+    clearDOM();
     const id = answer.query.pageids[0];
     const title = answer.query.pages[id].title;
     const extract = answer.query.pages[id].extract;
