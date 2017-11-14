@@ -1,0 +1,52 @@
+@import 'normalize';
+$primary: #00BCD4;
+$primary-light: #B2EBF2;
+$accent: #03A9F4;
+$primary-text: #263238;
+$secondary-text: #757575;
+$divider: #BDBDBD;
+$icon-text: #FFFFFF;
+
+@mixin flexCol {
+  display: -webkit-box;  
+  display: -ms-flexbox;  
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+}
+/* General Styling */
+body {
+  @include flexCol;
+  height: 100vh;
+  font-size: 100%;
+  color: $primary-text;
+  @media (min-width:1024px){
+    font-size: 110%;
+  }
+  
+}
+main {
+  -webkit-box-flex: 1;  
+    
+  -webkit-flex: 1;      
+  -ms-flex: 1;
+  flex: 1;
+}
+footer {
+  border-top: 1px solid $divider;
+  padding: 1rem 0;
+
+}
+
+.container {
+  padding: 0 .5rem;
+  @media (min-width:768px){
+    padding: 0;
+    margin: 0 auto;
+    width: 500px;
+  }
+  @media (min-width:1024px){
+    align-items: center;
+    width: 960px;
+  }
+}
