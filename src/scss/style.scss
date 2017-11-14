@@ -1,11 +1,12 @@
 @import 'normalize';
 $primary: #00BCD4;
-$primary-light: #B2EBF2;
+$primary-light: #e0f7fa;
 $accent: #03A9F4;
 $primary-text: #263238;
 $secondary-text: #757575;
 $divider: #BDBDBD;
 $icon-text: #FFFFFF;
+$success: #00e676;
 
 @mixin flexCol {
   display: -webkit-box;  
@@ -13,6 +14,16 @@ $icon-text: #FFFFFF;
   display: -webkit-flex;
   display: flex;
   flex-direction: column;
+}
+@mixin button {
+  outline: none;
+ border-width: 0;
+ box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+ cursor: pointer;
+ &:active{
+   opacity: .8;
+   box-shadow: none
+ }
 }
 /* General Styling */
 body {
@@ -37,7 +48,10 @@ footer {
   padding: 1rem 0;
 
 }
-
+header {
+  background: $primary;
+  color: $primary-light;
+}
 .container {
   padding: 0 .5rem;
   @media (min-width:768px){
@@ -49,4 +63,52 @@ footer {
     align-items: center;
     width: 960px;
   }
+}
+.wrapper {
+  display: flex;
+  align-items: flex-end;
+}
+/* Components */
+h2 {
+  margin-bottom: -10px;
+}
+a {
+  text-decoration: none;
+  color: #2962ff;
+}
+input {
+  margin-top: 20px;
+  width: 60%;
+  border: none;
+  border-bottom: 1px solid;
+  width: 55%;
+  &:focus{
+    outline: none;
+    border-bottom: 1px solid $accent;
+    transition: all 0.2s cubic-bezier(.25,.1,.25,1);
+}
+}
+.secondary {
+  color: $secondary-text;
+  font-weight: 300;
+  font-size: 20px;
+}
+hr{
+  color: $divider;
+  width: 100%;
+}
+button {
+  @include button;
+}
+.search{
+  background: $accent;
+  color: $icon-text;
+  margin-left: 10px;
+}
+.success {
+background: $success;
+border: 1px solid  $success;
+a {
+color: $icon-text
+}
 }
