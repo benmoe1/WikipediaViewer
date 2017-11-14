@@ -7,6 +7,7 @@
   <meta name="description" content="Search for Wikipedia Articles on the fly">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
   <title>Wikipedia Viewer</title>
 </head>
 
@@ -14,13 +15,19 @@
   <header>
     <div class="container">
       <h1>Wikipedia Viewer</h1>
-      <input type="text" id="js_userInput" placeholder="What do you search for?" required>
-      <button id="js_userSubmit" type="submit">Search</button>
-      <div id="js_validationMessage"></div>
     </div>
   </header>
-  <main class="container">
+  <main>
     <div class="container">
+      <h2>Search Wikipedia on the fly </h2>
+      <p class="secondary">Type your search query for something you want to explore. I'll manage the rest.</p>
+      <hr>
+      <div class="wrapper">
+        <input type="text" id="js_userInput" placeholder="What do you search for?" required>     
+        <button id="js_userSubmit" type="submit" class="search"><i class="fa fa-search" aria-hidden="true"></i>
+          Go</button>
+      </div>
+        <div id="js_validationMessage"></div>
     <div id="js_showResult"></div>
     </div>
   </main>
