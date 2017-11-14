@@ -9,8 +9,9 @@
     "no-unused-vars": 0,
     "max-len": 0,
     "linebreak-style": ["error", "windows"],
-    "no-use-before-define": "off"
-  },
+    "no-use-before-define": "off",
+    "prefer-destructuring": ["error", {"object": false, "array": false}]
+    },
   "env": {
     "browser": true
   }
