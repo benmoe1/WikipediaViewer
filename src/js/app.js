@@ -22,7 +22,6 @@
   function answerIntoDOM(answer) {
     clearDOM();
     const keyArray = Object.keys(answer.query.pages);
-    console.log(keyArray);
     for (let i = 0; i < keyArray.length; i += 1) {
       const id = keyArray[i];
       const title = answer.query.pages[id].title;
