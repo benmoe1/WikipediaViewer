@@ -20,8 +20,9 @@ $success: #00e676;
  border-width: 0;
  box-shadow: 0 3px 6px rgba(0,0,0,0.16);
  cursor: pointer;
- height: 35px;
+ height: 38px;
  width: 80px;
+ border-radius: 10px;
  &:active{
    opacity: .8;
    box-shadow: none
@@ -113,6 +114,8 @@ button {
 .button {
   @include button;
   text-align: center;
+  display: flex;
+  align-items: center;
 }
 .success {
 background: $success;
