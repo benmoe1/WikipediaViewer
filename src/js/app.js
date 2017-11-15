@@ -4,7 +4,7 @@
   const submitButton = document.getElementById('js_userSubmit');
   const validationContainer = document.getElementById('js_validationMessage');
   const searchResultContainer = document.getElementById('js_showResult');
-
+  // create Elements
   function createElement(elementName, textContent, className) {
     const element = document.createElement(elementName);
     if (textContent !== undefined) {
@@ -16,14 +16,14 @@
     }
     return element;
   }
-
+  // clear the DOM of the searchResultContainer
   function clearDOM() {
     searchResultContainer.innerHTML = '';
   }
-
+  // Write all Wikipedia entries into the DOM
   function answerIntoDOM(answer) {
     clearDOM();
-    const keyArray = Object.keys(answer.query.pages);
+    const keyArray = Object.keys(answer.query.pages); // array of keys to get access to the nested objects, which are dynamic integers
     for (let i = 0; i < keyArray.length; i += 1) {
       const id = keyArray[i];
       const title = answer.query.pages[id].title;
@@ -44,7 +44,7 @@
       searchResultContainer.appendChild(divider);
     }
   }
-
+  // check if the ajax request answer contains wikipedia entries
   function checkForSuccess(answer) {
     switch (answer.query) {
       case undefined:
@@ -58,7 +58,7 @@
       }
     }
   }
-
+  // make ajax call to the wikipedia api
   function requestArticle(input) {
     const searchQuery = input.toLowerCase();
     const url = `https://en.wikipedia.org/w/api.php?format=json&origin=*&action=query&generator=search&prop=extracts|info&inprop=url&exintro&explaintext&exlimit=max&gsrsearch=${searchQuery}&origin=*`;
@@ -72,7 +72,7 @@
     };
     xhr.send();
   }
-
+  // checks if the user has actually submitted a not empty string
   function validateUserInput() {
     const input = inputField.value;
     switch (input) {
@@ -86,10 +86,21 @@
         requestArticle(input);
     }
   }
-
+  // clears the validation message of former non-valid requests
   function clearValidationMessage() {
     validationContainer.innerHTML = '';
   }
+
+  function showTitleOnScrollDown() {
+    const header = document.getElementById('js_header');
+    const HeaderBottomPosition = header.offsetTop + header.offsetHeight;
+    if (window.scrollY >= HeaderBottomPosition) {
+      header.classList.add('fixedHeader');
+    } else {
+      header.classList.remove('fixedHeader');
+    }
+  }
   submitButton.addEventListener('click', validateUserInput);
   inputField.addEventListener('focus', clearValidationMessage);
+  window.addEventListener('scroll', showTitleOnScrollDown);
 }());

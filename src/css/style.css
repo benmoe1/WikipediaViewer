@@ -415,7 +415,8 @@ footer {
 
 header {
   background: #00BCD4;
-  color: #e0f7fa; }
+  color: #e0f7fa;
+  width: 100%; }
 
 .container {
   padding: 0 .5rem; }
@@ -502,5 +503,16 @@ button {
     color: #FFFFFF;
     margin: 0 auto;
     text-align: bottom; }
+
+/* additional classes */
+@media (max-width: 768px) {
+  header.fixedHeader {
+    position: fixed;
+    background: #F1F1F1;
+    color: #263238;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    opacity: .93; }
+    header.fixedHeader h1 {
+      margin: .3rem; } }
 
 /*# sourceMappingURL=style.css.map */

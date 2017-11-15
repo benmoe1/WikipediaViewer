@@ -54,6 +54,7 @@ footer {
 header {
   background: $primary;
   color: $primary-light;
+  width: 100%;
 }
 .container {
   padding: 0 .5rem;
@@ -124,5 +125,18 @@ a {
 color: $icon-text;
 margin: 0 auto;
 text-align: bottom;
+}
+}
+/* additional classes */
+header.fixedHeader {
+  @media (max-width: 768px) {
+  position: fixed;
+  background: #F1F1F1;
+  color: $primary-text;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  opacity: .93;
+  h1{
+    margin: .3rem;
+  }
 }
 }
