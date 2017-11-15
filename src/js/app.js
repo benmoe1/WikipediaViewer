@@ -16,17 +16,21 @@
     }
     return element;
   }
-
+  function clearDOM() {
+    searchResultContainer.innerHTML = '';
+  }
   function answerIntoDOM(answer) {
+    clearDOM();
     const id = answer.query.pageids[0];
     const title = answer.query.pages[id].title;
     const extract = answer.query.pages[id].extract;
     const urlToArticle = answer.query.pages[id].fullurl;
     const heading = createElement('h2', title);
     const paragraphForExtract = createElement('p', extract, undefined);
-    const buttonToFullArticle = createElement('button');
+    const buttonToFullArticle = createElement('div');
     const linkToArticle = createElement('a', 'See full');
     linkToArticle.setAttribute('href', urlToArticle);
+    buttonToFullArticle.classList.add('button', 'success');
 
     buttonToFullArticle.appendChild(linkToArticle);
     searchResultContainer.appendChild(heading);
@@ -62,7 +66,7 @@
     const input = inputField.value;
     switch (input) {
       case '':
-        inputField.setCustomValidity('Your search can\'t be empty');
+        inputField.setCustomValidity('Your search can\'t be empty \u{1f633}');
         validationContainer.textContent = inputField.validationMessage;
         break;
 
