@@ -21,26 +21,32 @@
   }
   function answerIntoDOM(answer) {
     clearDOM();
-    const id = answer.query.pageids[0];
-    const title = answer.query.pages[id].title;
-    const extract = answer.query.pages[id].extract;
-    const urlToArticle = answer.query.pages[id].fullurl;
-    const heading = createElement('h2', title);
-    const paragraphForExtract = createElement('p', extract, undefined);
-    const buttonToFullArticle = createElement('div');
-    const linkToArticle = createElement('a', 'See full');
-    linkToArticle.setAttribute('href', urlToArticle);
-    buttonToFullArticle.classList.add('button', 'success');
+    const keyArray = Object.keys(answer.query.pages);
+    console.log(keyArray);
+    for (let i = 0; i < keyArray.length; i += 1) {
+      const id = keyArray[i];
+      const title = answer.query.pages[id].title;
+      const extract = answer.query.pages[id].extract;
+      const urlToArticle = answer.query.pages[id].fullurl;
+      const heading = createElement('h2', title);
+      const paragraphForExtract = createElement('p', extract, undefined);
+      const buttonToFullArticle = createElement('div');
+      const linkToArticle = createElement('a', 'See full');
+      const divider = createElement('hr');
+      linkToArticle.setAttribute('href', urlToArticle);
+      buttonToFullArticle.classList.add('button', 'success');
 
-    buttonToFullArticle.appendChild(linkToArticle);
-    searchResultContainer.appendChild(heading);
-    searchResultContainer.appendChild(paragraphForExtract);
-    searchResultContainer.appendChild(buttonToFullArticle);
+      buttonToFullArticle.appendChild(linkToArticle);
+      searchResultContainer.appendChild(heading);
+      searchResultContainer.appendChild(paragraphForExtract);
+      searchResultContainer.appendChild(buttonToFullArticle);
+      searchResultContainer.appendChild(divider);
+    }
   }
 
   function checkForSuccess(answer) {
-    switch (answer.query.pageids[0]) {
-      case '-1': {
+    switch (answer.query) {
+      case undefined: {
         searchResultContainer.innerHTML = 'Your search was not successfull. Please try another query';
         break;
       }
@@ -51,7 +57,7 @@
   }
   function requestArticle(input) {
     const searchQuery = input.toLowerCase();
-    const url = `https://en.wikipedia.org/w/api.php?action=query&format=json&uselang=de&prop=extracts%7Cinfo&indexpageids=1&titles=${searchQuery}&redirects=1&exintro=1&explaintext=1&inprop=url&origin=*`;
+    const url = `https://en.wikipedia.org/w/api.php?format=json&origin=*&action=query&generator=search&prop=extracts|info&inprop=url&exintro&explaintext&exlimit=max&gsrsearch=${searchQuery}&origin=*`;
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.onload = function request() {
