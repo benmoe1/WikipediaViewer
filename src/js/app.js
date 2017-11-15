@@ -16,9 +16,11 @@
     }
     return element;
   }
+
   function clearDOM() {
     searchResultContainer.innerHTML = '';
   }
+
   function answerIntoDOM(answer) {
     clearDOM();
     const keyArray = Object.keys(answer.query.pages);
@@ -45,15 +47,18 @@
 
   function checkForSuccess(answer) {
     switch (answer.query) {
-      case undefined: {
+      case undefined:
+      {
         searchResultContainer.innerHTML = 'Your search was not successfull. Please try another query';
         break;
       }
-      default: {
+      default:
+      {
         answerIntoDOM(answer);
       }
     }
   }
+
   function requestArticle(input) {
     const searchQuery = input.toLowerCase();
     const url = `https://en.wikipedia.org/w/api.php?format=json&origin=*&action=query&generator=search&prop=extracts|info&inprop=url&exintro&explaintext&exlimit=max&gsrsearch=${searchQuery}&origin=*`;
@@ -67,6 +72,7 @@
     };
     xhr.send();
   }
+
   function validateUserInput() {
     const input = inputField.value;
     switch (input) {
@@ -80,6 +86,7 @@
         requestArticle(input);
     }
   }
+
   function clearValidationMessage() {
     validationContainer.innerHTML = '';
   }
