@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Search for Wikipedia Articles on the fly">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Wikipedia Viewer</title>
 </head>
+
 <body>
-  
+  <header id="js_header">
+    <div class="container">
+      <h1>Wikipedia Viewer</h1>
+      <span class="hide  arrowTop" id="js_arrowTop">
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+      </span>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <h2>Search Wikipedia on the fly </h2>
+      <p class="secondary">Type your search query for something you want to explore.I'll manage the rest.&#128640</p>
+      <hr>
+      <div class="wrapper">
+        <input type="text" id="js_userInput" placeholder="What do you search for?" required>
+        <button id="js_userSubmit" type="submit" class="search">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          Go</button>
+      </div>
+      <div id="js_validationMessage"></div>
+      <div id="js_showResult"></div>
+    </div>
+  </main>
+  <footer>
+    <div class="container"> build by benmoe1. Find me on
+      <a href="#">Github</a>
+    </div>
+  </footer>
+  <script src="js/app.js"></script>
 </body>
+
 </html>
