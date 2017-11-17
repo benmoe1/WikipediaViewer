@@ -119,8 +119,17 @@
       window.scrollTo(0, positionOnPage - (positionOnPage / 3));
     }
   }
+  function makeFocusEffect() {
+    document.body.classList.add('focus');
+  }
+  function removeFocusEffect() {
+    document.body.classList.remove('focus');
+  }
+
   submitButton.addEventListener('click', validateUserInput);
   inputField.addEventListener('focus', clearValidationMessage);
+  inputField.addEventListener('focus', makeFocusEffect);
+  inputField.addEventListener('blur', removeFocusEffect);
   window.addEventListener('scroll', showTitleOnScrollDown);
   window.addEventListener('scroll', showArrowToTopOnScrollDown);
   arrowToTop.addEventListener('click', scrollToTop);
