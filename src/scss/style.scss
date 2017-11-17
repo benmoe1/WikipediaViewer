@@ -15,6 +15,12 @@ $success: #00e676;
   display: flex;
   flex-direction: column;
 }
+@mixin flexRow {
+  display: -webkit-box;  
+  display: -ms-flexbox;  
+  display: -webkit-flex;
+  display: flex;
+}
 @mixin button {
   outline: none;
  border-width: 0;
@@ -55,6 +61,11 @@ header {
   background: $primary;
   color: $primary-light;
   width: 100%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  .container {
+    @include flexRow;
+    justify-content: space-between;
+  }
 }
 .container {
   padding: 0 .5rem;
@@ -69,7 +80,7 @@ header {
   }
 }
 .wrapper {
-  display: flex;
+  @include flexRow;
   align-items: flex-end;
 }
 /* Components */
@@ -114,9 +125,10 @@ button {
 }
 .button {
   @include button;
+  @include flexRow;
   text-align: center;
-  display: flex;
   align-items: center;
+margin-left: auto;
 }
 .success {
 background: $success;
@@ -124,19 +136,16 @@ border: 1px solid  $success;
 a {
 color: $icon-text;
 margin: 0 auto;
-text-align: bottom;
 }
 }
 /* additional classes */
 header.fixedHeader {
   @media (max-width: 768px) {
   position: fixed;
-  background: #F1F1F1;
-  color: $primary-text;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  opacity: .93;
+  opacity: .98;
   h1{
     margin: .3rem;
   }
 }
 }
+

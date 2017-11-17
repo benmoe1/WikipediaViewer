@@ -416,7 +416,14 @@ footer {
 header {
   background: #00BCD4;
   color: #e0f7fa;
-  width: 100%; }
+  width: 100%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  header .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between; }
 
 .container {
   padding: 0 .5rem; }
@@ -431,6 +438,9 @@ header {
       width: 960px; } }
 
 .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   align-items: flex-end; }
 
@@ -489,9 +499,13 @@ button {
   height: 38px;
   width: 80px;
   border-radius: 10px;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  align-items: center; }
+  text-align: center;
+  align-items: center;
+  margin-left: auto; }
   .button:active {
     opacity: .8;
     box-shadow: none; }
@@ -501,17 +515,13 @@ button {
   border: 1px solid #00e676; }
   .success a {
     color: #FFFFFF;
-    margin: 0 auto;
-    text-align: bottom; }
+    margin: 0 auto; }
 
 /* additional classes */
 @media (max-width: 768px) {
   header.fixedHeader {
     position: fixed;
-    background: #F1F1F1;
-    color: #263238;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    opacity: .93; }
+    opacity: .98; }
     header.fixedHeader h1 {
       margin: .3rem; } }
 
