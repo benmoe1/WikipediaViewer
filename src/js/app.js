@@ -50,7 +50,7 @@
     switch (answer.query) {
       case undefined:
       {
-        searchResultContainer.innerHTML = 'Your search was not successfull. Please try another query';
+        searchResultContainer.innerHTML = 'Your search was not successfull. Please try another query \u{1f605}';
         break;
       }
       default:
