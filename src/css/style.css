@@ -517,6 +517,12 @@ button {
     color: #FFFFFF;
     margin: 0 auto; }
 
+@media (max-width: 768px) {
+  .arrowTop {
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor: pointer; } }
+
 /* additional classes */
 @media (max-width: 768px) {
   header.fixedHeader {
@@ -524,5 +530,8 @@ button {
     opacity: .98; }
     header.fixedHeader h1 {
       margin: .3rem; } }
+
+.hide {
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

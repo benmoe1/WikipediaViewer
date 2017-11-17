@@ -4,6 +4,7 @@
   const submitButton = document.getElementById('js_userSubmit');
   const validationContainer = document.getElementById('js_validationMessage');
   const searchResultContainer = document.getElementById('js_showResult');
+  const arrowToTop = document.getElementById('js_arrowTop');
   // create Elements
   function createElement(elementName, textContent, className) {
     const element = document.createElement(elementName);
@@ -100,7 +101,27 @@
       header.classList.remove('fixedHeader');
     }
   }
+
+  function showArrowToTopOnScrollDown() {
+    const header = document.getElementById('js_header');
+    const HeaderBottomPosition = header.offsetTop + header.offsetHeight;
+    if (window.scrollY >= HeaderBottomPosition) {
+      arrowToTop.classList.remove('hide');
+    } else {
+      arrowToTop.classList.add('hide');
+    }
+  }
+  // https://stackoverflow.com/questions/1144805/scroll-to-the-top-of-the-page-using-javascript-jquery
+  function scrollToTop() {
+    const positionOnPage = document.documentElement.scrollTop || document.body.scrollTop;
+    if (positionOnPage > 0) {
+      window.requestAnimationFrame(scrollToTop);
+      window.scrollTo(0, positionOnPage - (positionOnPage / 3));
+    }
+  }
   submitButton.addEventListener('click', validateUserInput);
   inputField.addEventListener('focus', clearValidationMessage);
   window.addEventListener('scroll', showTitleOnScrollDown);
+  window.addEventListener('scroll', showArrowToTopOnScrollDown);
+  arrowToTop.addEventListener('click', scrollToTop);
 }());

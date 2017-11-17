@@ -138,6 +138,15 @@ color: $icon-text;
 margin: 0 auto;
 }
 }
+
+.arrowTop{
+ @media (max-width: 768px) {
+ margin-top: auto;
+ margin-bottom: auto;
+ cursor: pointer;
+ }
+  }
+
 /* additional classes */
 header.fixedHeader {
   @media (max-width: 768px) {
@@ -148,4 +157,8 @@ header.fixedHeader {
   }
 }
 }
+.hide {
+  display: none;
+}
+
 
