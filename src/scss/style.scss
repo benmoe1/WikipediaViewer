@@ -148,7 +148,11 @@ margin: 0 auto;
  cursor: pointer;
  }
   }
-
+.fa-arrow-up {
+  &:active {
+    color: #f48fb1;
+  }
+}
 /* additional classes */
 header.fixedHeader {
   @media (max-width: 768px) {

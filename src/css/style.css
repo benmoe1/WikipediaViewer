@@ -525,6 +525,9 @@ button {
     margin-bottom: auto;
     cursor: pointer; } }
 
+.fa-arrow-up:active {
+  color: #f48fb1; }
+
 /* additional classes */
 @media (max-width: 768px) {
   header.fixedHeader {
