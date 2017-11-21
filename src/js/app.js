@@ -130,6 +130,11 @@
   }
 
   submitButton.addEventListener('click', validateUserInput);
+  inputField.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+      validateUserInput();
+    }
+  });
   inputField.addEventListener('focus', clearValidationMessage);
   inputField.addEventListener('focus', makeFocusEffect);
   inputField.addEventListener('blur', removeFocusEffect);
