@@ -412,8 +412,27 @@ main {
   flex: 1; }
 
 footer {
+  font-size: 110%;
   border-top: 1px solid #BDBDBD;
   padding: 1rem 0; }
+  footer .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column; }
+    @media (min-width: 500px) {
+      footer .container {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between; } }
+  footer .fa-facebook-official {
+    color: #3B5998;
+    font-size: 120%;
+    margin: 0 5px; }
+  footer .fa-twitter-square {
+    color: #1dcaff;
+    font-size: 120%; }
 
 header {
   background: #00BCD4;
