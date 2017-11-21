@@ -91,7 +91,7 @@
   function clearValidationMessage() {
     validationContainer.innerHTML = '';
   }
-
+  // fixed header on scroll down
   function showTitleOnScrollDown() {
     const header = document.getElementById('js_header');
     const HeaderBottomPosition = header.offsetTop + header.offsetHeight;
@@ -101,7 +101,7 @@
       header.classList.remove('fixedHeader');
     }
   }
-
+  // show an arrow to top on scroll down
   function showArrowToTopOnScrollDown() {
     const header = document.getElementById('js_header');
     const HeaderBottomPosition = header.offsetTop + header.offsetHeight;
@@ -111,6 +111,7 @@
       arrowToTop.classList.add('hide');
     }
   }
+  // Smooth scrolling
   // https://stackoverflow.com/questions/1144805/scroll-to-the-top-of-the-page-using-javascript-jquery
   function scrollToTop() {
     const positionOnPage = document.documentElement.scrollTop || document.body.scrollTop;
@@ -119,9 +120,11 @@
       window.scrollTo(0, positionOnPage - (positionOnPage / 3));
     }
   }
+  // focus effect when input is focused
   function makeFocusEffect() {
     document.body.classList.add('focus');
   }
+  // removes focus effect when input is leaved
   function removeFocusEffect() {
     document.body.classList.remove('focus');
   }
