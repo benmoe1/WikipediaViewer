@@ -6,6 +6,7 @@
  * 2. Prevent adjustments of font size after orientation changes in
  *    IE on Windows Phone and in iOS.
  */
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400");
 html {
   line-height: 1.15;
   /* 1 */
@@ -398,6 +399,7 @@ body {
   flex-direction: column;
   height: 100vh;
   font-size: 100%;
+  font-family: 'Lato', sans-serif;
   color: #263238; }
   @media (min-width: 1024px) {
     body {
@@ -410,8 +412,27 @@ main {
   flex: 1; }
 
 footer {
+  font-size: 110%;
   border-top: 1px solid #BDBDBD;
   padding: 1rem 0; }
+  footer .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column; }
+    @media (min-width: 500px) {
+      footer .container {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between; } }
+  footer .fa-facebook-official {
+    color: #3B5998;
+    font-size: 120%;
+    margin: 0 5px; }
+  footer .fa-twitter-square {
+    color: #1dcaff;
+    font-size: 120%; }
 
 header {
   background: #00BCD4;
@@ -522,6 +543,17 @@ button {
     margin-top: auto;
     margin-bottom: auto;
     cursor: pointer; } }
+
+.fa-arrow-up:active {
+  color: #f48fb1; }
+
+.validationMessage {
+  color: #ff5252;
+  margin-top: 10px; }
+
+.titleForResult {
+  text-transform: uppercase;
+  margin-bottom: 2rem; }
 
 /* additional classes */
 @media (max-width: 768px) {

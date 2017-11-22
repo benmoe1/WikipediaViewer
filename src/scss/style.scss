@@ -1,4 +1,5 @@
 @import 'normalize';
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
 $primary: #00BCD4;
 $primary-light: #e0f7fa;
 $accent: #03A9F4;
@@ -39,6 +40,7 @@ body {
   @include flexCol;
   height: 100vh;
   font-size: 100%;
+  font-family: 'Lato', sans-serif;
   color: $primary-text;
   @media (min-width:1024px){
     font-size: 110%;
@@ -52,10 +54,27 @@ main {
   -ms-flex: 1;
   flex: 1;
 }
-footer {
+footer{
+  font-size: 110%;
   border-top: 1px solid $divider;
   padding: 1rem 0;
-
+.container {
+  @include flexCol;
+  @media (min-width: 500px) {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;    
+  }
+}
+.fa-facebook-official {
+  color: #3B5998;
+  font-size: 120%;
+  margin: 0 5px;
+}
+.fa-twitter-square {
+  color: #1dcaff;
+  font-size: 120%;
+}
 }
 header {
   background: $primary;
@@ -146,7 +165,19 @@ margin: 0 auto;
  cursor: pointer;
  }
   }
-
+.fa-arrow-up {
+  &:active {
+    color: #f48fb1;
+  }
+}
+.validationMessage {
+  color: #ff5252;
+  margin-top: 10px;
+}
+.titleForResult {
+text-transform: uppercase;
+margin-bottom: 2rem;
+}
 /* additional classes */
 header.fixedHeader {
   @media (max-width: 768px) {
@@ -164,4 +195,5 @@ header.fixedHeader {
   background:  #e0e0e0;
 
 }
+
 
