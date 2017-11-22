@@ -547,6 +547,10 @@ button {
 .fa-arrow-up:active {
   color: #f48fb1; }
 
+.validationMessage {
+  color: #ff5252;
+  margin-top: 10px; }
+
 /* additional classes */
 @media (max-width: 768px) {
   header.fixedHeader {

@@ -170,6 +170,10 @@ margin: 0 auto;
     color: #f48fb1;
   }
 }
+.validationMessage {
+  color: #ff5252;
+  margin-top: 10px;
+}
 /* additional classes */
 header.fixedHeader {
   @media (max-width: 768px) {
