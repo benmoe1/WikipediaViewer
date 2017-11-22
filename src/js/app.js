@@ -24,13 +24,15 @@
   // Write all Wikipedia entries into the DOM
   function answerIntoDOM(answer) {
     clearDOM();
+    const headingForSearchResult = createElement('h2', 'Your results:', 'titleForResult');
+    searchResultContainer.appendChild(headingForSearchResult);
     const keyArray = Object.keys(answer.query.pages); // array of keys to get access to the nested objects, which are dynamic integers
     for (let i = 0; i < keyArray.length; i += 1) {
       const id = keyArray[i];
       const title = answer.query.pages[id].title;
       const extract = answer.query.pages[id].extract;
       const urlToArticle = answer.query.pages[id].fullurl;
-      const heading = createElement('h2', title);
+      const heading = createElement('h3', title);
       const paragraphForExtract = createElement('p', extract, undefined);
       const buttonToFullArticle = createElement('div');
       const linkToArticle = createElement('a', 'See full');
