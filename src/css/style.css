@@ -551,6 +551,10 @@ button {
   color: #ff5252;
   margin-top: 10px; }
 
+.titleForResult {
+  text-transform: uppercase;
+  margin-bottom: 2rem; }
+
 /* additional classes */
 @media (max-width: 768px) {
   header.fixedHeader {
