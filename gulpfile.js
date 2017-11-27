@@ -17,14 +17,14 @@ gulp.task('minify', function() {
     .pipe(gulp.dest('dist'));
 });
 gulp.task('uglify', function () {
-  return gulp.src('js/app.js')
+  return gulp.src('src/js/app.js')
       .pipe(uglify())
       .pipe(rename('app.min.js'))
       .pipe(gulp.dest('dist/js/'));
 });
-gulp.task('minify-css', () => {
-  return gulp.src('css/*.css')
-    .pipe(cleanCSS({compatibility: 'ie8'}))
+gulp.task('minify-css', function() {
+  return gulp.src('src/css/style.css')
+    .pipe(cleanCSS())
     .pipe(rename('style.min.css'))
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('dist/css/'));
 });
