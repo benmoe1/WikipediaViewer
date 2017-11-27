@@ -61,6 +61,10 @@
       }
     }
   }
+  function callOnNotSuccessful() {
+    const paragraphForFailMessage = createElement('p', 'Oops, something went wrong \u{1f633}. Please try again.');
+    searchResultContainer.appendChild(paragraphForFailMessage);
+  }
   // make ajax call to the wikipedia api
   function requestArticle(input) {
     const searchQuery = input.toLowerCase();
@@ -71,6 +75,8 @@
       if (this.readyState === 4 && this.status === 200) {
         const requestAnswer = JSON.parse(this.responseText);
         checkForSuccess(requestAnswer);
+      } else {
+        callOnNotSuccessful();
       }
     };
     xhr.send();

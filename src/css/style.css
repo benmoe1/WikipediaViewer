@@ -396,6 +396,9 @@ body {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   height: 100vh;
   font-size: 100%;
@@ -420,11 +423,21 @@ footer {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column; }
     @media (min-width: 500px) {
       footer .container {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
         flex-direction: row;
+        -webkit-box-align: end;
+        -ms-flex-align: end;
         align-items: flex-end;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
         justify-content: space-between; } }
   footer .fa-facebook-official {
     color: #3B5998;
@@ -438,12 +451,19 @@ header {
   background: #00BCD4;
   color: #e0f7fa;
   width: 100%;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
   header .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between; }
 
 .container {
@@ -463,6 +483,12 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
   align-items: flex-end; }
 
 /* Components */
@@ -482,8 +508,11 @@ input {
   input:focus {
     outline: none;
     border: 1px solid #03A9F4;
+    -webkit-transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    -o-transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
     transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1); }
   input:invalid {
+    -webkit-box-shadow: none;
     box-shadow: none; }
 
 .secondary {
@@ -498,6 +527,7 @@ hr {
 button {
   outline: none;
   border-width: 0;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   cursor: pointer;
   height: 38px;
@@ -505,6 +535,7 @@ button {
   border-radius: 10px; }
   button:active {
     opacity: .8;
+    -webkit-box-shadow: none;
     box-shadow: none; }
 
 .search {
@@ -515,6 +546,7 @@ button {
 .button {
   outline: none;
   border-width: 0;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   cursor: pointer;
   height: 38px;
@@ -524,11 +556,18 @@ button {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
   text-align: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-left: auto; }
   .button:active {
     opacity: .8;
+    -webkit-box-shadow: none;
     box-shadow: none; }
 
 .success {
